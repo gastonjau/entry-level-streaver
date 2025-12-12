@@ -10,7 +10,7 @@ export function SlowConnectionNotification({
   if (!isSlow) return null;
 
   return (
-    <div className="animate-in fade-in-50 slide-in-from-top-4 ">
+    <div className="animate-in fade-in-50 slide-in-from-top-4 m-5">
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-center justify-center gap-2 shadow-sm">
         <div className="relative">
           <div className="w-4 h-4 rounded-full border-2 border-amber-400 opacity-20" />

@@ -38,7 +38,7 @@ export default function PostsPage() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Country Search</h1>
+      <h1>Posts Search</h1>
       <input
         type="number"
         onChange={handleSearchTermChange}

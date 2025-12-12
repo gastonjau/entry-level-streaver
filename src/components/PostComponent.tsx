@@ -4,10 +4,10 @@ export const PostComponent = ({
   post: { userId: number; title: string; body: string };
 }) => {
   return (
-    <div style={{ border: "1px solid black", margin: "10px", padding: "10px" }}>
+    <div className="border p-3.5 gap-2.5 m-3 max-w-xl rounded-md shadow-md">
       <strong>UserId: {post.userId}</strong>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
+      <h2 className=" font-semibold">{post.title}</h2>
+      <p className="font-sans">{post.body}</p>
     </div>
   );
 };

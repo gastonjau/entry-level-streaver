@@ -4,6 +4,7 @@ import { PostComponent } from "@/src/components/PostComponent";
 import { SlowConnectionNotification } from "@/src/components/SlowConnectionNotification";
 import { ChangeEvent, useEffect, useState } from "react";
 import useSWR from "swr";
+import { InputComponent } from "@/src/components/InputComponent";
 
 export default function PostsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -37,18 +38,20 @@ export default function PostsPage() {
   
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Posts Search</h1>
-      <input
-        type="number"
+    <div className="flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-8 mt-6">
+        Posts Search
+      </h1>
+      <InputComponent
+        value={searchTerm}
         onChange={handleSearchTermChange}
-        style={{ border: "1px solid black" }}
+        label="User ID:"
       />
-      {error && <p>Error loading posts</p>}
+      {error && <p className="text-red-500 font-medium m-4">Error loading posts</p>}
       <SlowConnectionNotification isSlow={isSlowConnection} />
-      {!error && isValidating && <p>Loading...</p>}
+      {!error && isValidating && <p className="text-gray-600 font-medium m-4">Loading...</p>}
       {!error && !isValidating && posts.length === 0 && debouncedSearchTerm && (
-        <p> No posts found with userId {debouncedSearchTerm}</p>
+        <p className="text-gray-500 font-medium m-4">No posts found with userId {debouncedSearchTerm}</p>
       )}
       {posts.map((post) => (
         <PostComponent key={post.id} post={post} />

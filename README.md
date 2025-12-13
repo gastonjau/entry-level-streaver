@@ -53,7 +53,7 @@ The application will be available at `http://localhost:3000`
 - Local: `http://localhost:3000`
 
 **Production:**
-- Live: `https://entry-level-streaver.vercel.app/` [Ver](https://entry-level-streaver.vercel.app/) 
+- Live: `https://entry-level-streaver.vercel.app/` [Go](https://entry-level-streaver.vercel.app/) 
 
 ## License
 

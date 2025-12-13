@@ -29,7 +29,7 @@ export default function PostsPage() {
   );
 
   useEffect(() => {
-    const timer = setTimeout(() => setDebouncedSearchTerm(searchTerm), 2000);
+    const timer = setTimeout(() => setDebouncedSearchTerm(searchTerm), 1000);
     return () => clearTimeout(timer);
   }, [searchTerm]);
 

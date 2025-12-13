@@ -22,7 +22,7 @@ A modern Next.js application for viewing and searching posts.
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/gastonjau/entry-level-streaver.git
 
 # Navigate to project directory
 cd streaverEntryLevel

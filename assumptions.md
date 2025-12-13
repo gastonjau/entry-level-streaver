@@ -33,3 +33,6 @@
 ## Code Conventions
 - Path aliases: '@/' for absolute imports
 - Naming: PascalCase for components, Lowercase for folders
+
+## To Improve
+- Add Environment variables

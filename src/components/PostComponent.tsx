@@ -1,7 +1,9 @@
+import { Post } from "../types/types";
+
 export const PostComponent = ({
   post,
 }: {
-  post: { userId: number; title: string; body: string };
+  post: Post;
 }) => {
   return (
     <div className="border p-3.5 gap-2.5 m-3 max-w-xl rounded-md shadow-md border-gray-300">

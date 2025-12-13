@@ -42,10 +42,10 @@ export default function PostsPage() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="relative w-full max-w-xl flex justify-center mb-8 mt-6">
+      <div className="relative w-full max-w-xl flex justify-center mb-8 mt-6 ">
         <Link
           href="/"
-          className="absolute left-0 flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-600 transition-colors"
+          className="absolute left-0 flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-600 transition-colors ml-5"
         >
           <Arrow />
         </Link>

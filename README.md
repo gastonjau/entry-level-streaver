@@ -49,6 +49,11 @@ npm run lint
 
 The application will be available at `http://localhost:3000`
 
+**Development:**
+- Local: `http://localhost:3000`
+
+**Production:**
+- Live: `https://entry-level-streaver.vercel.app/`
 
 ## License
 

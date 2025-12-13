@@ -27,7 +27,7 @@
 
 ## UX Assumptions
 - User may have slow connection: Visual notification is displayed (managed with SWR)
-- Search is by userId: (not free text)
+- Search is by userId: (not free text) to filter posts from a specific user
 - Responsive design: Mobile and desktop
 
 ## Code Conventions
@@ -36,3 +36,7 @@
 
 ## To Improve
 - Add Environment variables
+- Testing
+
+## API
+- JSONPlaceholder 

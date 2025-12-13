@@ -1,6 +1,6 @@
 # Streaver Entry Level Project
 
-A modern Next.js application for viewing and searching posts, built with performance and offline-resilience in mind.
+A modern Next.js application for viewing and searching posts.
 
 ## Features
 

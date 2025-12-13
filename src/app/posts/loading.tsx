@@ -1,6 +1,6 @@
 
 export default () => {
   return (
-    <div className="text-gray-600 font-medium m-4">Loading...</div>
+    <div className="flex items-center justify-center min-h-screen text-gray-600 font-medium">Loading...</div>
   )
 }

@@ -15,3 +15,17 @@ export type PaginationProps = {
   setPage: React.Dispatch<React.SetStateAction<number>>;
   total: number;
 };
+
+export interface StatusMessagesProps {
+  error: any;
+  isValidating: boolean;
+  posts: any[];
+  debouncedSearchTerm: string;
+}
+
+export interface InputComponentProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
+  id?: string;
+}

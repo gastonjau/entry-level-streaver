@@ -10,6 +10,45 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /*Gradients*/
+  --color-gradient1: #4f46e5;
+  --color-gradient2:  #9333ea;
+
+  /*Backgrounds*/
+  --color-bkg-indigo-100: #e0e7ff;
+  --color-bkg-indigo-200: #c7d2fe;
+  --color-bkg-indigo-600: #4f46e5;
+  --color-bkg-indigo-700: #4338ca;
+  --color-bkg-amber: #fffbeb;
+  --color-bkg-gray-disable: #d1d5db;
+
+  /*Texts*/
+  --color-text-indigo-600: #4f46e5;
+  --color-text-indigo-700:  #4338ca;
+  --color-grayBold: #111827;
+  --color-grayLight: #9ca3af;
+  --color-grayDisable:#6b7280;
+
+  /*Errors*/
+  --color-error: #ef4444;
+
+  /*Loadings*/
+  --color-loading: #6b7280;
+  --color-loadingOrange: #b45309;
+
+  /*Labels*/
+  --color-label: #374151;
+
+  /*Borders*/
+  --color-amberBorder: #fbbf24;
+  --color-amberBorderLight: #fde68a;
+  --color-borderLight: #d1d5db;
+  --color-borderGray: #9ca3af;
+
+  /*Fucuses*/
+  --color-focusRing: #6366f1;
+
 }
 
 @media (prefers-color-scheme: dark) {

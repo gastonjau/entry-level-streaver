@@ -9,6 +9,7 @@ import { InputComponent } from "@/src/components/InputComponent";
 import Link from "next/link";
 import Arrow from "@/public/arrow";
 import { PaginationComponent } from "@/src/components/PaginationComponent";
+import { PostsFounds } from "@/src/components/PostsFounds";
 export default function PostsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>("");
@@ -52,11 +53,11 @@ export default function PostsPage() {
       <div className="relative w-full max-w-xl flex justify-center mb-8 mt-6 ">
         <Link
           href="/"
-          className="absolute left-0 flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-600 transition-colors ml-5"
+          className="absolute left-0 flex items-center justify-center w-10 h-10 rounded-full bg-bkg-indigo-100 hover:bg-bkg-indigo-200 text-text-indigo-600 transition-colors ml-5"
         >
           <Arrow />
         </Link>
-        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600">
+        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-gradient1 to-gradient2">
           Posts Search
         </h1>
       </div>
@@ -65,16 +66,17 @@ export default function PostsPage() {
         onChange={handleSearchTermChange}
         label="User ID:"
       />
-      {error && <p className="text-red-500 font-medium m-4">Error loading posts</p>}
+      {error && <p className="text-error font-medium m-4">Error loading posts</p>}
       <SlowConnectionNotification isSlow={isSlowConnection} />
-      {!error && isValidating && <p className="text-gray-600 font-medium m-4">Loading...</p>}
+      {!error && isValidating && <p className="text-loading font-medium m-4">Loading...</p>}
       {!error && !isValidating && posts.length === 0 && debouncedSearchTerm && (
-        <p className="text-gray-500 font-medium m-4">No posts found with userId {debouncedSearchTerm}</p>
+        <p className="text-loading font-medium m-4">No posts found with userId {debouncedSearchTerm}</p>
       )}
       {posts.map((post: Post) => (
         <PostComponent key={post.id} post={post} />
       ))}
       <PaginationComponent page={page} setPage={setPage} total={total} />
+      <PostsFounds total={total} />
     </div>
   );
 };

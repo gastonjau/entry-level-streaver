@@ -4,3 +4,10 @@ export interface Post {
   title: string;
   body: string;
 }
+
+
+export type PaginationProps = {
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  posts : Post[];
+};

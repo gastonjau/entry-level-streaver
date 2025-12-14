@@ -1,6 +1,6 @@
 "use client";
 import { fetcher} from "@/src/utils/Fetcher";
-import { Post } from "@/src/types/types";
+import { Post, PostsResponse } from "@/src/types/types";
 import { PostComponent } from "@/src/components/PostComponent";
 import { SlowConnectionNotification } from "@/src/components/SlowConnectionNotification";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -8,16 +8,19 @@ import useSWR from "swr";
 import { InputComponent } from "@/src/components/InputComponent";
 import Link from "next/link";
 import Arrow from "@/public/arrow";
+import { PaginationComponent } from "@/src/components/PaginationComponent";
+import { PostsFoundComponent } from "@/src/components/PostsFoundComponent";
 
 export default function PostsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>("");
   const [isSlowConnection, setIsSlowConnection] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
 
-  const { data: posts = [], isValidating, error } = useSWR<Post[]>(
+  const { data, isValidating, error } = useSWR<PostsResponse>(
     debouncedSearchTerm
-      ? `https://jsonplaceholder.typicode.com/posts?userId=${debouncedSearchTerm}`
-      : "https://jsonplaceholder.typicode.com/posts",
+      ? `/api/posts?userId=${debouncedSearchTerm}&_page=${page}&_limit=10`
+      : `/api/posts?_page=${page}&_limit=10`,
     fetcher,
     {
       loadingTimeout: 1000,
@@ -27,6 +30,9 @@ export default function PostsPage() {
       revalidateOnFocus: false,
     }
   );
+
+  const posts = data?.posts ?? [];
+  const total = data?.total ?? 0;
 
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedSearchTerm(searchTerm), 1000);
@@ -64,9 +70,10 @@ export default function PostsPage() {
       {!error && !isValidating && posts.length === 0 && debouncedSearchTerm && (
         <p className="text-gray-500 font-medium m-4">No posts found with userId {debouncedSearchTerm}</p>
       )}
-      {posts.map((post) => (
+      {posts.map((post: Post) => (
         <PostComponent key={post.id} post={post} />
       ))}
+      <PaginationComponent page={page} setPage={setPage} posts={posts} />
     </div>
   );
 };

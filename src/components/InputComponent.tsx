@@ -20,6 +20,7 @@ export const InputComponent = ({
         </label>
       )}
       <input
+        aria-label="number-input"
         type="number"
         value={value}
         onChange={onChange}

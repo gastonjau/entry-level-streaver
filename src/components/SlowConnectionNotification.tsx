@@ -16,7 +16,7 @@ export function SlowConnectionNotification({
           <div className="w-4 h-4 rounded-full border-2 border-amberBorder opacity-20" />
           <div className="absolute top-0 left-0 w-4 h-4 rounded-full border-2 border-amberBorder border-t-transparent animate-spin" />
         </div>
-        <span className="text-loadingOrange text-sm font-medium">
+        <span aria-label="slow-connection-notification" className="text-loadingOrange text-sm font-medium">
           Loading is taking longer than usual...
         </span>
       </div>

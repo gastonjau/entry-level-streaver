@@ -8,6 +8,7 @@ export const PaginationComponent = ({ page, setPage, total }: PaginationProps) =
   return (
     <div className="flex items-center gap-4 my-8">
       <button
+      aria-label="previous-page-button"
         onClick={() => setPage(page - 1)}
         disabled={page === 1}
         className="px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer
@@ -20,6 +21,7 @@ export const PaginationComponent = ({ page, setPage, total }: PaginationProps) =
         Page {page}
       </span>
       <button
+      aria-label="next-page-button"
         onClick={() => setPage(page + 1)}
         disabled={!hasNextPage}
         className="px-4 py-2 rounded-lg font-medium transition-all duration-200

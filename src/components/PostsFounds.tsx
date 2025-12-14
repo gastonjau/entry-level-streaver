@@ -2,6 +2,7 @@
 export const PostsFounds = ({ total }: { total: number }) => {
   return (
     <div
+    aria-label="posts-found-count"
       className="px-4 py-2 rounded-lg text-text-indigo-700 font-semibold text-center mb-4"
       style={{
         background: `repeating-linear-gradient(

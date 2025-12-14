@@ -5,8 +5,8 @@ export async function GET(request: Request) {
   const limit = searchParams.get("_limit");
 
   const url = userId
-    ? `https://jsonplaceholder.typicode.com/posts?userId=${userId}&_page=${page}&_limit=${limit}`
-    : `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`;
+    ? `${process.env.NEXT_PUBLIC_API_URL}/posts?userId=${userId}&_page=${page}&_limit=${limit}`
+    : `${process.env.NEXT_PUBLIC_API_URL}/posts?_page=${page}&_limit=${limit}`;
 
   try {
     const response = await fetch(url);

@@ -46,3 +46,8 @@
 
 ## API
 - JSONPlaceholder 
+
+## Why fetch in the API and SWR on the client?
+- Fetch on the server: It's sufficient because you don't need caching there, you just make the request and return data
+- SWR on the client: Provides improved UX (caching, request deduplication, loading states)
+

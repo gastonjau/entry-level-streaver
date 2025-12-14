@@ -17,6 +17,7 @@
 - public/ -> svg/icons
 - src/ 
     - app/ -> Pages, layouts and not-found
+        - api -> Endpoints
     - components/ -> Reusable UI components
     - types/ -> Typescript types and interfaces 
     - utils/ -> Utilities
@@ -25,10 +26,15 @@
 - /           -> Home (Server Component)
 - /posts      -> Posts list with search (Client Component)
 
-## UX Assumptions
+## Api Structure
+- /api/posts -> All the posts
+- /api/posts?userId=(userIdParam) -> Filter posts by userId
+
+## UX-UI Assumptions
 - User may have slow connection: Visual notification is displayed (managed with SWR)
 - Search is by userId: (not free text) to filter posts from a specific user
 - Responsive design: Mobile and desktop
+- Pagination: Improves slow connection functionality
 
 ## Code Conventions
 - Path aliases: '@/' for absolute imports
@@ -40,3 +46,8 @@
 
 ## API
 - JSONPlaceholder 
+
+## Why fetch in the API and SWR on the client?
+- Fetch on the server: It's sufficient because you don't need caching there, you just make the request and return data
+- SWR on the client: Provides improved UX (caching, request deduplication, loading states)
+

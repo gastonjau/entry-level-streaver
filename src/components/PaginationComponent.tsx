@@ -1,6 +1,10 @@
 import { PaginationProps } from "../types/types";
 
-export const PaginationComponent = ({ page, setPage, posts }: PaginationProps) => {
+const LIMIT = 10;
+
+export const PaginationComponent = ({ page, setPage, total }: PaginationProps) => {
+  const hasNextPage = page * LIMIT < total;
+
   return (
     <div className="flex items-center gap-4 my-8">
       <button
@@ -17,7 +21,7 @@ export const PaginationComponent = ({ page, setPage, posts }: PaginationProps) =
       </span>
       <button
         onClick={() => setPage(page + 1)}
-        disabled={posts?.length < 10}
+        disabled={!hasNextPage}
         className="px-4 py-2 rounded-lg font-medium transition-all duration-200
           bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer
           disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"

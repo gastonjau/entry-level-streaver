@@ -9,8 +9,6 @@ import { InputComponent } from "@/src/components/InputComponent";
 import Link from "next/link";
 import Arrow from "@/public/arrow";
 import { PaginationComponent } from "@/src/components/PaginationComponent";
-import { PostsFoundComponent } from "@/src/components/PostsFoundComponent";
-
 export default function PostsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>("");
@@ -35,7 +33,10 @@ export default function PostsPage() {
   const total = data?.total ?? 0;
 
   useEffect(() => {
-    const timer = setTimeout(() => setDebouncedSearchTerm(searchTerm), 1000);
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm)
+      setPage(1);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
@@ -73,7 +74,7 @@ export default function PostsPage() {
       {posts.map((post: Post) => (
         <PostComponent key={post.id} post={post} />
       ))}
-      <PaginationComponent page={page} setPage={setPage} posts={posts} />
+      <PaginationComponent page={page} setPage={setPage} total={total} />
     </div>
   );
 };

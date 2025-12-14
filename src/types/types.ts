@@ -5,9 +5,13 @@ export interface Post {
   body: string;
 }
 
+export interface PostsResponse {
+  posts: Post[];
+  total: number;
+}
 
 export type PaginationProps = {
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
-  posts : Post[];
+  total: number;
 };

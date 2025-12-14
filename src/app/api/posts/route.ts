@@ -19,7 +19,12 @@ export async function GET(request: Request) {
     }
 
     const posts = await response.json();
-    return Response.json(posts);
+    const total = response.headers.get("x-total-count");
+
+    return Response.json({
+      posts,
+      total: total ? parseInt(total, 10) : posts.length,
+    });
   } catch {
     return Response.json({ error: "Internal server error" }, { status: 500 });
   }

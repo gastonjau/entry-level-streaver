@@ -32,6 +32,24 @@ cd streaverEntryLevel
 npm install
 ```
 
+### Environment Variables
+
+This project requires environment variables to work correctly. Follow these steps:
+
+1. Copy the `.env.template` file to create your own `.env` file:
+
+```bash
+cp .env.template .env
+```
+
+2. The `.env.template` file contains the following variables:
+
+```
+NEXT_PUBLIC_API_URL=https://jsonplaceholder.typicode.com
+```
+
+3. You can modify the API URL if you want to use a different backend.
+
 ### Running the Application
 
 ```bash

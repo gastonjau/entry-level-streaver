@@ -1,25 +1,22 @@
-import { ChangeEvent } from "react";
-
-interface InputComponentProps {
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  label?: string;
-}
+import { useId } from "react";
+import { InputComponentProps } from "../types/types";
 
 export const InputComponent = ({
   value,
   onChange,
   label,
 }: InputComponentProps) => {
+
+  const id = useId();
   return (
     <div className="w-full max-w-md pl-5 pr-5">
       {label && (
-        <label className="block text-sm font-medium text-label mb-2">
+        <label className="block text-sm font-medium text-label mb-2" htmlFor={id}>
           {label}
         </label>
       )}
       <input
+        id={id}
         aria-label="number-input"
         type="number"
         value={value}

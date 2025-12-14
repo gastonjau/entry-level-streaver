@@ -8,6 +8,7 @@ A modern Next.js application for viewing and searching posts.
 - Optimized for slow/unstable connections (SWR caching)
 - Visual notification for slow connection status
 - Search posts by user ID
+- Pagination limited to 10 posts
 - Responsive design (mobile & desktop)
 - Custom 404 page
 

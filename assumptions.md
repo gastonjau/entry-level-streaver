@@ -30,7 +30,7 @@
 - /api/posts -> All the posts
 - /api/posts?userId=(userIdParam) -> Filter posts by userId
 
-## UX Assumptions
+## UX-UI Assumptions
 - User may have slow connection: Visual notification is displayed (managed with SWR)
 - Search is by userId: (not free text) to filter posts from a specific user
 - Responsive design: Mobile and desktop
